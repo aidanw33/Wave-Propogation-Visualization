@@ -151,10 +151,10 @@ def hash_two_points(point1, point2):
     scaling_factor = 1000
 
     # Convert floating-point values to integers
-    x1_int = int(point1[0] * scaling_factor)
-    y1_int = int(point1[1] * scaling_factor)
-    x2_int = int(point2[0] * scaling_factor)
-    y2_int = int(point2[1] * scaling_factor)
+    x1_int = int(round(point1[0], 12) * scaling_factor)
+    y1_int = int(round(point1[1], 12) * scaling_factor)
+    x2_int = int(round(point2[0], 12) * scaling_factor)
+    y2_int = int(round(point2[1], 12) * scaling_factor)
 
     # Combine the hash codes of x and y for both points using bitwise XOR
     hash_code = hash(x1_int) ^ hash(y1_int) ^ hash(x2_int) ^ hash(y2_int) + ((x2_int*8) + x1_int**3 + y2_int * y1_int)
@@ -201,19 +201,21 @@ def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_si
     newVector = hash_two_points((startX, startY), (interX, interY))
     if newVector is False:
         return
-    
-    #can add to the vector count after we make sure this isn't a duplicate vector
-    global VECTOR_COUNT
-    VECTOR_COUNT += 1
 
-    #draw the given vector 
-    add_vector_to_graph(ax, startX, startY, theta, vectorLength)
+    #draw the given vector if in graph
+    if(startX >= 0 and startY >= 0 and startX <= checkSize and startY <= checkSize and interX >= 0 and interY >= 0 and interX <= checkSize and interY <= checkSize and vectorLength > 1e-10) :
+        add_vector_to_graph(ax, startX, startY, theta, vectorLength)
+
+        global VECTOR_COUNT
+        VECTOR_COUNT += 1
+        #can add to the vector count after we make sure this isn't a duplicate vector and is in range of graph
 
     #draw the next vector if it is still in the graph
     if( interX < checkSize and interY < checkSize and interY >= 0 ) :
         createArray(ax, interX, interY, theta1, theta2, checkSize, not thetaOne, grid_size)
         createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size)
 
+    #edge case check to reflect vectors at the top of the grid back down
     if( interX < checkSize and interY == checkSize and otheta > 0 ) :
         createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size )
 
@@ -272,7 +274,7 @@ def main():
 
             createArray(ax, startX, startY, theta1, theta2, gridSize, True, gridSize)
             createArray(ax, startX, startY, -theta1, -theta2, gridSize, True, gridSize)
-            text_box.set_text("Unique Vector Count :" + "BROKEN") #str(VECTOR_COUNT))
+            text_box.set_text("Unique Vector Count :" + str(VECTOR_COUNT)) #str(VECTOR_COUNT))
             plt.grid()
             plt.show()
 
