@@ -4,6 +4,13 @@ import numpy as np
 import sys
 import math
 import matplotlib.patches as patches
+from matplotlib.widgets import Button
+import time
+
+
+#GLOBAL VARIABLE
+VECTOR_COUNT = 0
+VECTOR_HASH = {}
 
 
 def add_vector_to_graph(ax, x, y, angle_degrees, length, color='red'):
@@ -96,7 +103,42 @@ def find_first_intersection_point(x, y, angle_degrees, vector_length, grid_size)
         # print("point found: ", second_intersection_point)
         return second_intersection_point
 
+def hash_two_points(point1, point2):
+    """
+    Hash function for two sets of two-dimensional points.
 
+    Args:
+    - point1 (tuple): A tuple representing the first point (x1, y1).
+    - point2 (tuple): A tuple representing the second point (x2, y2).
+
+    Returns:
+    - int: Hash code for the two points.
+    """
+    if len(point1) != 2 or len(point2) != 2:
+        raise ValueError("Points must be tuples with two coordinates (x, y)")
+
+    # Choose a scaling factor (adjust as needed based on your specific use case)
+    scaling_factor = 1000
+
+    # Convert floating-point values to integers
+    x1_int = int(point1[0] * scaling_factor)
+    y1_int = int(point1[1] * scaling_factor)
+
+    x2_int = int(point2[0] * scaling_factor)
+    y2_int = int(point2[1] * scaling_factor)
+
+
+    # Combine the hash codes of x and y for both points using bitwise XOR
+    hash_code = hash(x1_int) ^ hash(y1_int) ^ hash(x2_int) ^ hash(y2_int) + ((x2_int*8) + x1_int**3 + y2_int * y1_int)
+
+
+    global VECTOR_HASH
+    mapping = VECTOR_HASH.get(hash_code)
+    if mapping is not None :
+        return False
+    else :
+        VECTOR_HASH[hash_code] = True
+        return True
 
 def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_size) :
 
@@ -110,16 +152,30 @@ def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_si
     interX, interY = find_first_intersection_point(startX, startY, theta, 2, grid_size)
     vectorLength = euclidean_distance((startX, startY), (interX, interY))
 
-    #draw the given vector
+    #check to make sure this exact vector hasn't been added to the graph before
+    newVector = hash_two_points((startX, startY), (interX, interY))
+
+    if newVector is False:
+        return
+    
+    #can add to the vector count after we make sure this isn't a duplicate vector
+    global VECTOR_COUNT
+    VECTOR_COUNT += 1
+
+    #draw the given vector 
     add_vector_to_graph(ax, startX, startY, theta, vectorLength)
 
     #draw the next vector if it is still in the graph
     if(interX < checkSize and interY < checkSize and interY >= 0 ) :
-        
         createArray(ax, interX, interY, theta1, theta2, checkSize, not thetaOne, grid_size)
         createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size)
 
 def main():
+
+    def on_button_click(event):
+        update(45)
+    
+
     # Create a graph with a checkerboard pattern
     fig, ax = plt.subplots()
     ax = draw_checkerboard_just_ax(5, 5, 1, ax)
@@ -130,11 +186,26 @@ def main():
     theta2_input = TextBox(plt.axes([0.25, 0.05, 0.65, 0.03]), 'Theta2 (degrees):', initial='45')
     gridSize_input = TextBox(plt.axes([0.25, 0.15, 0.65, 0.03]), 'Width (Boxes):', initial='5')
     startPoint_input = TextBox(plt.axes([0.25, 0.2, 0.65, 0.03]), 'Start Point:', initial='2.5')
+    button_ax = plt.axes([0.8, 0.25, 0.15, 0.035])  # [left, bottom, width, height]
+
+    #Calculate button
+    button = Button(button_ax, 'Calculate') 
+    button.on_clicked(on_button_click)
+
+    #Vector Count Display
+    global VECTOR_COUNT 
+    vectorBoxString = "Unique Vector Count: "+ str(VECTOR_COUNT)
+    text_box = plt.text(-1 , 20, vectorBoxString, bbox=dict(facecolor='white', edgecolor='black'))
 
 
     # Function to update the plot when input values change
     def update(val):
+
         try:
+            global VECTOR_COUNT, VECTOR_HASH
+            VECTOR_COUNT = 0
+            VECTOR_HASH.clear()
+
             ax.clear()
             gridSize = int(gridSize_input.text)
             startPoint = float(startPoint_input.text)
@@ -148,21 +219,15 @@ def main():
 
             createArray(ax, startX, startY, theta1, theta2, gridSize, True, gridSize)
             createArray(ax, startX, startY, -theta1, -theta2, gridSize, True, gridSize)
-            x_grid_lines, y_grid_lines = find_first_intersection_point(0, 2.5, theta1, 2, gridSize)
-            
-            print("Intersection points with vertical grid lines:", x_grid_lines)
-            print("Intersection points with horizontal grid lines:", y_grid_lines)
-            
+            text_box.set_text("Unique Vector Count :" + "BROKEN") #str(VECTOR_COUNT))
             plt.grid()
             # Update your existing plot with the new theta1 and theta2 values
         except ValueError:
             print("Invalid input. Please enter valid numeric values.")
 
     # Register the update function with each input box
-    theta1_input.on_submit(update)
-    theta2_input.on_submit(update)
-    gridSize_input.on_submit(update)
-    startPoint_input.on_submit(update)
+
+    
 
     update(45)
     plt.grid()
