@@ -88,7 +88,7 @@ def euclidean_distance(point1, point2):
     distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
     return distance
 
-def find_first_intersection_point(x, y, angle_degrees, vector_length, grid_size):
+def find_first_intersection_point(x, y, angle_degrees, width, height):
     """
     Find the first intersection point of a vector within the checkerboard grid.
 
@@ -96,12 +96,13 @@ def find_first_intersection_point(x, y, angle_degrees, vector_length, grid_size)
     - x (float): The x-coordinate of the starting point of the vector.
     - y (float): The y-coordinate of the starting point of the vector.
     - angle_degrees (float): The angle of the vector in degrees (measured counterclockwise from the positive x-axis).
-    - vector_length (float): The length of the vector.
-    - grid_size (float): The size of the checkerboard grid.
+    - width  (int)  : Defines the width of the graph
+    - height (int)  : Defines the height of the graph
 
     Returns:
     - tuple or None: The coordinates of the first intersection point, or None if no intersection point is found within the grid.
     """
+    
     # Convert angle to radians
     angle_radians = np.radians(angle_degrees)
 
@@ -114,14 +115,14 @@ def find_first_intersection_point(x, y, angle_degrees, vector_length, grid_size)
     line_equation_y = lambda y_val: ((y_val - y) / slope) + x
 
     # Find the next vertical asymptote to reach at x = targetX
-    targetX = next((x_val for x_val in np.arange(0, grid_size + 1) if x_val > x), None)
+    targetX = next((x_val for x_val in np.arange(0, width + 1) if x_val > x), None)
 
     # Find the first intersection point with horizontal grid lines at y = targetY
     if(angle_degrees < 0) :
-        targetY = next((y_val for y_val in np.arange(0, grid_size + 1) if y_val >= y and y_val <= grid_size), None)    
+        targetY = next((y_val for y_val in np.arange(0, height + 1) if y_val >= y and y_val <= height), None)    
         targetY -= 1
     else:
-        targetY = next((y_val for y_val in np.arange(0, grid_size + 1) if y_val > y and y_val <= grid_size), None)        
+        targetY = next((y_val for y_val in np.arange(0, height + 1) if y_val > y and y_val <= height), None)        
 
     # Calculate the coordinates of the intersection points
     first_intersection_point = (targetX, line_equation(targetX)) if targetX is not None else None
@@ -168,7 +169,7 @@ def hash_two_points(point1, point2):
         VECTOR_HASH[hash_code] = True
         return True
 
-def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_size) :
+def createArray(ax, startX, startY, theta1, theta2, thetaOne, width, height) :
     """
     Recursively create and draw a series of vectors on a Matplotlib axis.
 
@@ -178,14 +179,14 @@ def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_si
     - startY (float): The y-coordinate of the starting point of the initial vector.
     - theta1 (float): The angle of the first vector in degrees (measured counterclockwise from the positive x-axis).
     - theta2 (float): The angle of the second vector in degrees (measured counterclockwise from the positive x-axis).
-    - checkSize (float): A boundary size to check whether the next vector is still within the graph.
     - thetaOne (bool): A boolean indicating whether to use theta1 or theta2 for the initial vector.
-    - grid_size (float): The size of the checkerboard grid.
+    - width  (int)  : Defines the width of the graph
+    - height (int)  : Defines the height of the graph
 
     Returns:
     - None
     """
-
+    
     #decipher you're theta based thetaOne boolean
     if(thetaOne) :
         theta = theta1
@@ -194,7 +195,7 @@ def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_si
         theta = theta2
         otheta = theta1
     #find next intersection point and distance to that point
-    interX, interY = find_first_intersection_point(startX, startY, theta, 2, grid_size)
+    interX, interY = find_first_intersection_point(startX, startY, theta, width, height)
     vectorLength = euclidean_distance((startX, startY), (interX, interY))
 
     #check to make sure this exact vector hasn't been added to the graph before
@@ -203,7 +204,7 @@ def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_si
         return
 
     #draw the given vector if in graph
-    if(startX >= 0 and startY >= 0 and startX <= checkSize and startY <= checkSize and interX >= 0 and interY >= 0 and interX <= checkSize and interY <= checkSize and vectorLength > 1e-10) :
+    if(startX >= 0 and startY >= 0 and startX <= width and startY <= height and interX >= 0 and interY >= 0 and interX <= width and interY <= height and vectorLength > 1e-10) :
         add_vector_to_graph(ax, startX, startY, theta, vectorLength)
 
         global VECTOR_COUNT
@@ -211,13 +212,13 @@ def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_si
         #can add to the vector count after we make sure this isn't a duplicate vector and is in range of graph
 
     #draw the next vector if it is still in the graph
-    if( interX < checkSize and interY < checkSize and interY >= 0 ) :
-        createArray(ax, interX, interY, theta1, theta2, checkSize, not thetaOne, grid_size)
-        createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size)
+    if( interX < width and interY < height and interY >= 0 ) :
+        createArray(ax, interX, interY, theta1, theta2, not thetaOne, width, height)
+        createArray(ax, interX, interY, -theta1, -theta2, not thetaOne, width, height)
 
     #edge case check to reflect vectors at the top of the grid back down
-    if( interX < checkSize and interY == checkSize and otheta > 0 ) :
-        createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size )
+    if( interX < width and interY == height and otheta > 0 ) :
+        createArray(ax, interX, interY, -theta1, -theta2, not thetaOne, width, height )
 
 
 def main():
@@ -236,7 +237,8 @@ def main():
     # Input boxes for theta1 and theta2
     theta1_input = TextBox(plt.axes([0.25, 0.1, 0.65, 0.03]), 'Theta1 (degrees):', initial='45')
     theta2_input = TextBox(plt.axes([0.25, 0.05, 0.65, 0.03]), 'Theta2 (degrees):', initial='45')
-    gridSize_input = TextBox(plt.axes([0.25, 0.15, 0.65, 0.03]), 'Width (Boxes):', initial='5')
+    width_input = TextBox(plt.axes([0.25, 0.15, 0.23, 0.03]), 'Width (Boxes):', initial='5')
+    height_input = TextBox(plt.axes([0.66, 0.15, 0.24, 0.03]), 'Height (Boxes):', initial='5')
     startPoint_input = TextBox(plt.axes([0.25, 0.2, 0.65, 0.03]), 'Start Point:', initial='2.5')
     button_ax = plt.axes([0.8, 0.25, 0.15, 0.035])  # [left, bottom, width, height]
 
@@ -262,18 +264,21 @@ def main():
             VECTOR_HASH.clear()
 
             ax.clear()
-            gridSize = int(gridSize_input.text)
             startPoint = float(startPoint_input.text)
+            width = int(width_input.text)
+            height = int(height_input.text)
 
-            draw_checkerboard_just_ax(gridSize, gridSize, 1, ax)
+            #draw checkerboard with dimensions (4, 6)
+
+            draw_checkerboard_just_ax(height, width, 1, ax)
             theta1 = float(theta1_input.text)
             theta2 = float(theta2_input.text)
             
             startX = 0
             startY = startPoint
 
-            createArray(ax, startX, startY, theta1, theta2, gridSize, True, gridSize)
-            createArray(ax, startX, startY, -theta1, -theta2, gridSize, True, gridSize)
+            createArray(ax, startX, startY, theta1, theta2, True, width, height)
+            createArray(ax, startX, startY, -theta1, -theta2, True, width, height)
             text_box.set_text("Unique Vector Count :" + str(VECTOR_COUNT)) #str(VECTOR_COUNT))
             plt.grid()
             plt.show()
