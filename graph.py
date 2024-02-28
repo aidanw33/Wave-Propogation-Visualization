@@ -189,9 +189,10 @@ def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_si
     #decipher you're theta based thetaOne boolean
     if(thetaOne) :
         theta = theta1
+        otheta = theta2
     else:
         theta = theta2
-
+        otheta = theta1
     #find next intersection point and distance to that point
     interX, interY = find_first_intersection_point(startX, startY, theta, 2, grid_size)
     vectorLength = euclidean_distance((startX, startY), (interX, interY))
@@ -209,9 +210,13 @@ def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_si
     add_vector_to_graph(ax, startX, startY, theta, vectorLength)
 
     #draw the next vector if it is still in the graph
-    if(interX < checkSize and interY < checkSize and interY >= 0 ) :
+    if( interX < checkSize and interY < checkSize and interY >= 0 ) :
         createArray(ax, interX, interY, theta1, theta2, checkSize, not thetaOne, grid_size)
         createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size)
+
+    if( interX < checkSize and interY == checkSize and otheta > 0 ) :
+        createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size )
+
 
 def main():
 
