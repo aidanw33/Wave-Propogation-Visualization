@@ -1,8 +1,18 @@
 import matplotlib.pyplot as plt
 from matplotlib.widgets import TextBox
+from matplotlib.widgets import TextBox
 import numpy as np
 import sys
 import math
+import matplotlib.patches as patches
+from matplotlib.widgets import Button
+import time
+
+
+#GLOBAL VARIABLE
+VECTOR_COUNT = 0
+VECTOR_HASH = {}
+
 import matplotlib.patches as patches
 from matplotlib.widgets import Button
 import time
@@ -52,6 +62,8 @@ def draw_checkerboard_just_ax(rows, cols, square_size, ax):
     for row in range(rows):
         for col in range(cols):
             # Set all squares to white
+            color = 'white' if (row + col) % 2 == 0 else '#d3d3d3'
+            
             color = 'white' if (row + col) % 2 == 0 else '#d3d3d3'
             
             ax.add_patch(plt.Rectangle((col * square_size, row * square_size), square_size, square_size,
@@ -107,6 +119,11 @@ def find_first_intersection_point(x, y, angle_degrees, vector_length, grid_size)
 
     # Calculate slope of the vector
     slope = np.tan(angle_radians)
+    # print("CurrentX: ", x)
+    # print("CurrentY: ", y)
+    # print("angle_degrees", angle_degrees)
+    # print("slope: ", slope)
+
 
     # Point-slope form of the line equation: y - y1 = m * (x - x1)
     # where (x1, y1) is the starting point of the vector
@@ -129,8 +146,10 @@ def find_first_intersection_point(x, y, angle_degrees, vector_length, grid_size)
 
     #return the closer intersection point
     if(euclidean_distance((x, y), (first_intersection_point)) < euclidean_distance((x, y), (second_intersection_point))) :
+        # print("point found: ", first_intersection_point)
         return first_intersection_point
     else:
+        # print("point found: ", second_intersection_point)
         return second_intersection_point
 
 def hash_two_points(point1, point2):
@@ -206,21 +225,18 @@ def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_si
     VECTOR_COUNT += 1
 
     #draw the given vector 
+    #draw the given vector 
     add_vector_to_graph(ax, startX, startY, theta, vectorLength)
 
     #draw the next vector if it is still in the graph
     if(interX < checkSize and interY < checkSize and interY >= 0 ) :
         createArray(ax, interX, interY, theta1, theta2, checkSize, not thetaOne, grid_size)
         createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size)
+    if(interX < checkSize and interY < checkSize and interY >= 0 ) :
+        createArray(ax, interX, interY, theta1, theta2, checkSize, not thetaOne, grid_size)
+        createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size)
 
 def main():
-
-    def on_button_click(event):
-        """
-        Updates the GUI when 'Calculate' button is clicked
-        """
-        update(45)
-    
     # Create a graph with a checkerboard pattern
     fig, ax = plt.subplots()
     ax = draw_checkerboard_just_ax(5, 5, 1, ax)
