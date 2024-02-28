@@ -4,9 +4,30 @@ import numpy as np
 import sys
 import math
 import matplotlib.patches as patches
+from matplotlib.widgets import Button
+import time
+
+
+#GLOBAL VARIABLE
+VECTOR_COUNT = 0
+VECTOR_HASH = {}
 
 
 def add_vector_to_graph(ax, x, y, angle_degrees, length, color='red'):
+    """
+    Add a vector to a Matplotlib axis.
+
+    Parameters:
+    - ax (matplotlib.axes._axes.Axes): The Matplotlib axis to which the vector will be added.
+    - x (float): The x-coordinate of the starting point of the vector.
+    - y (float): The y-coordinate of the starting point of the vector.
+    - angle_degrees (float): The angle of the vector in degrees (measured counterclockwise from the positive x-axis).
+    - length (float): The length of the vector.
+    - color (str, optional): The color of the vector. Default is 'red'.
+
+    Returns:
+    - None
+    """
     angle_radians = np.radians(angle_degrees)
     x_component = length * np.cos(angle_radians)
     y_component = length * np.sin(angle_radians)
@@ -15,6 +36,18 @@ def add_vector_to_graph(ax, x, y, angle_degrees, length, color='red'):
     ax.quiver(x, y, x_component, y_component, angles='xy', scale_units='xy', scale=1, color=color, width=.002, headaxislength=0, headlength=0)
 
 def draw_checkerboard_just_ax(rows, cols, square_size, ax):
+    """
+    Draw a checkerboard pattern on a Matplotlib axis.
+
+    Parameters:
+    - rows (int): Number of rows in the checkerboard.
+    - cols (int): Number of columns in the checkerboard.
+    - square_size (float): Size of each square in the checkerboard.
+    - ax (matplotlib.axes._axes.Axes): The Matplotlib axis on which the checkerboard will be drawn.
+
+    Returns:
+    - matplotlib.axes._axes.Axes: The same Matplotlib axis with the checkerboard drawn.
+    """
 
     for row in range(rows):
         for col in range(cols):
@@ -39,87 +72,155 @@ def draw_checkerboard_just_ax(rows, cols, square_size, ax):
     return ax
 
 def euclidean_distance(point1, point2):
+    """
+    Calculate the Euclidean distance between two points in a two-dimensional space.
+
+    Parameters:
+    - point1 (tuple): A tuple representing the coordinates (x1, y1) of the first point.
+    - point2 (tuple): A tuple representing the coordinates (x2, y2) of the second point.
+
+    Returns:
+    - float: The Euclidean distance between the two points.
+    """
+
     x1, y1 = point1
     x2, y2 = point2
     distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
     return distance
 
 def find_first_intersection_point(x, y, angle_degrees, vector_length, grid_size):
+    """
+    Find the first intersection point of a vector within the checkerboard grid.
+
+    Parameters:
+    - x (float): The x-coordinate of the starting point of the vector.
+    - y (float): The y-coordinate of the starting point of the vector.
+    - angle_degrees (float): The angle of the vector in degrees (measured counterclockwise from the positive x-axis).
+    - vector_length (float): The length of the vector.
+    - grid_size (float): The size of the checkerboard grid.
+
+    Returns:
+    - tuple or None: The coordinates of the first intersection point, or None if no intersection point is found within the grid.
+    """
     # Convert angle to radians
     angle_radians = np.radians(angle_degrees)
 
     # Calculate slope of the vector
     slope = np.tan(angle_radians)
-    # print("CurrentX: ", x)
-    # print("CurrentY: ", y)
-    # print("angle_degrees", angle_degrees)
-    # print("slope: ", slope)
-
 
     # Point-slope form of the line equation: y - y1 = m * (x - x1)
     # where (x1, y1) is the starting point of the vector
     line_equation = lambda x_val: slope * (x_val - x) + y
     line_equation_y = lambda y_val: ((y_val - y) / slope) + x
 
-    # Find intersection points with vertical and horizontal grid lines
-    x_intercept = np.arange(0, grid_size + 1)
-    y_intercept = line_equation(x_intercept)
+    # Find the next vertical asymptote to reach at x = targetX
+    targetX = next((x_val for x_val in np.arange(0, grid_size + 1) if x_val > x), None)
 
-    # Find the smallest positive intersection points along the x-axis and y-axis
-    first_x_intersection = next((x_val for x_val in x_intercept if x_val > x), None)
-    # print("TargetX", first_x_intersection)
-    first_y_intersection = next((y_val for y_val in y_intercept if y_val > y and y_val <= grid_size), None)
-
-    # Find the first intersection point with horizontal grid lines
-    
+    # Find the first intersection point with horizontal grid lines at y = targetY
     if(angle_degrees < 0) :
-        y_intercept_horizontal = next((y_val for y_val in np.arange(0, grid_size + 1) if y_val >= y and y_val <= grid_size), None)    
-        y_intercept_horizontal -= 1
+        targetY = next((y_val for y_val in np.arange(0, grid_size + 1) if y_val >= y and y_val <= grid_size), None)    
+        targetY -= 1
     else:
-        y_intercept_horizontal = next((y_val for y_val in np.arange(0, grid_size + 1) if y_val > y and y_val <= grid_size), None)    
+        targetY = next((y_val for y_val in np.arange(0, grid_size + 1) if y_val > y and y_val <= grid_size), None)        
 
-    
-    # print("TargetY: ", y_intercept_horizontal)
+    # Calculate the coordinates of the intersection points
+    first_intersection_point = (targetX, line_equation(targetX)) if targetX is not None else None
+    second_intersection_point = (line_equation_y(targetY), targetY) if targetY is not None else None
 
-    # Calculate the coordinates of the first intersection point
-    first_y_intersection = (line_equation_y(y_intercept_horizontal), y_intercept_horizontal) if y_intercept_horizontal is not None else None
-
-
-    # Calculate the coordinates of the first intersection point
-    first_intersection_point = (first_x_intersection, line_equation(first_x_intersection))
-    second_intersection_point = first_y_intersection
-
+    #return the closer intersection point
     if(euclidean_distance((x, y), (first_intersection_point)) < euclidean_distance((x, y), (second_intersection_point))) :
-        # print("point found: ", first_intersection_point)
         return first_intersection_point
     else:
-        # print("point found: ", second_intersection_point)
         return second_intersection_point
 
+def hash_two_points(point1, point2):
+    """
+    Hash function for two sets of two-dimensional points.
 
+    Args:
+    - point1 (tuple): A tuple representing the first point (x1, y1).
+    - point2 (tuple): A tuple representing the second point (x2, y2).
+
+    Returns:
+    - int: Hash code for the two points.
+    """
+    if len(point1) != 2 or len(point2) != 2:
+        raise ValueError("Points must be tuples with two coordinates (x, y)")
+
+    # Choose a scaling factor (adjust as needed based on your specific use case)
+    scaling_factor = 1000
+
+    # Convert floating-point values to integers
+    x1_int = int(point1[0] * scaling_factor)
+    y1_int = int(point1[1] * scaling_factor)
+    x2_int = int(point2[0] * scaling_factor)
+    y2_int = int(point2[1] * scaling_factor)
+
+    # Combine the hash codes of x and y for both points using bitwise XOR
+    hash_code = hash(x1_int) ^ hash(y1_int) ^ hash(x2_int) ^ hash(y2_int) + ((x2_int*8) + x1_int**3 + y2_int * y1_int)
+
+    #see if this individual vector has already been added to the graph
+    global VECTOR_HASH
+    mapping = VECTOR_HASH.get(hash_code)
+    if mapping is not None :
+        return False
+    else :
+        VECTOR_HASH[hash_code] = True
+        return True
 
 def createArray(ax, startX, startY, theta1, theta2, checkSize, thetaOne, grid_size) :
+    """
+    Recursively create and draw a series of vectors on a Matplotlib axis.
 
+    Parameters:
+    - ax (matplotlib.axes._axes.Axes): The Matplotlib axis on which the vectors will be drawn.
+    - startX (float): The x-coordinate of the starting point of the initial vector.
+    - startY (float): The y-coordinate of the starting point of the initial vector.
+    - theta1 (float): The angle of the first vector in degrees (measured counterclockwise from the positive x-axis).
+    - theta2 (float): The angle of the second vector in degrees (measured counterclockwise from the positive x-axis).
+    - checkSize (float): A boundary size to check whether the next vector is still within the graph.
+    - thetaOne (bool): A boolean indicating whether to use theta1 or theta2 for the initial vector.
+    - grid_size (float): The size of the checkerboard grid.
+
+    Returns:
+    - None
+    """
+
+    #decipher you're theta based thetaOne boolean
     if(thetaOne) :
         theta = theta1
     else:
         theta = theta2
 
-
     #find next intersection point and distance to that point
     interX, interY = find_first_intersection_point(startX, startY, theta, 2, grid_size)
     vectorLength = euclidean_distance((startX, startY), (interX, interY))
 
-    #draw the given vector
+    #check to make sure this exact vector hasn't been added to the graph before
+    newVector = hash_two_points((startX, startY), (interX, interY))
+    if newVector is False:
+        return
+    
+    #can add to the vector count after we make sure this isn't a duplicate vector
+    global VECTOR_COUNT
+    VECTOR_COUNT += 1
+
+    #draw the given vector 
     add_vector_to_graph(ax, startX, startY, theta, vectorLength)
 
     #draw the next vector if it is still in the graph
     if(interX < checkSize and interY < checkSize and interY >= 0 ) :
-        
         createArray(ax, interX, interY, theta1, theta2, checkSize, not thetaOne, grid_size)
         createArray(ax, interX, interY, -theta1, -theta2, checkSize, not thetaOne, grid_size)
 
 def main():
+
+    def on_button_click(event):
+        """
+        Updates the GUI when 'Calculate' button is clicked
+        """
+        update(45)
+    
     # Create a graph with a checkerboard pattern
     fig, ax = plt.subplots()
     ax = draw_checkerboard_just_ax(5, 5, 1, ax)
@@ -130,11 +231,29 @@ def main():
     theta2_input = TextBox(plt.axes([0.25, 0.05, 0.65, 0.03]), 'Theta2 (degrees):', initial='45')
     gridSize_input = TextBox(plt.axes([0.25, 0.15, 0.65, 0.03]), 'Width (Boxes):', initial='5')
     startPoint_input = TextBox(plt.axes([0.25, 0.2, 0.65, 0.03]), 'Start Point:', initial='2.5')
+    button_ax = plt.axes([0.8, 0.25, 0.15, 0.035])  # [left, bottom, width, height]
+
+    #Calculate button
+    button = Button(button_ax, 'Calculate') 
+    button.on_clicked(on_button_click)
+
+    #Vector Count Display
+    global VECTOR_COUNT 
+    vectorBoxString = "Unique Vector Count: "+ str(VECTOR_COUNT)
+    text_box = plt.text(-1 , 20, vectorBoxString, bbox=dict(facecolor='white', edgecolor='black'))
 
 
     # Function to update the plot when input values change
     def update(val):
+        """
+        Function to update the plot when calculate button is pressed
+        """
+
         try:
+            global VECTOR_COUNT, VECTOR_HASH
+            VECTOR_COUNT = 0
+            VECTOR_HASH.clear()
+
             ax.clear()
             gridSize = int(gridSize_input.text)
             startPoint = float(startPoint_input.text)
@@ -148,25 +267,17 @@ def main():
 
             createArray(ax, startX, startY, theta1, theta2, gridSize, True, gridSize)
             createArray(ax, startX, startY, -theta1, -theta2, gridSize, True, gridSize)
-            x_grid_lines, y_grid_lines = find_first_intersection_point(0, 2.5, theta1, 2, gridSize)
-            
-            print("Intersection points with vertical grid lines:", x_grid_lines)
-            print("Intersection points with horizontal grid lines:", y_grid_lines)
-            
+            text_box.set_text("Unique Vector Count :" + "BROKEN") #str(VECTOR_COUNT))
             plt.grid()
+            plt.show()
+
             # Update your existing plot with the new theta1 and theta2 values
         except ValueError:
             print("Invalid input. Please enter valid numeric values.")
 
-    # Register the update function with each input box
-    theta1_input.on_submit(update)
-    theta2_input.on_submit(update)
-    gridSize_input.on_submit(update)
-    startPoint_input.on_submit(update)
 
     update(45)
-    plt.grid()
-    plt.show()
+
 
 if __name__ == "__main__":
     main()
