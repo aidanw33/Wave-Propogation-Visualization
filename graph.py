@@ -130,9 +130,9 @@ def find_first_intersection_point(x, y, angle_degrees, width, height):
 
     #return the closer intersection point
     if(euclidean_distance((x, y), (first_intersection_point)) < euclidean_distance((x, y), (second_intersection_point))) :
-        return first_intersection_point
+        return first_intersection_point, True
     else:
-        return second_intersection_point
+        return second_intersection_point, False
 
 def hash_two_points(point1, point2):
     """
@@ -195,7 +195,7 @@ def createArray(ax, startX, startY, theta1, theta2, thetaOne, width, height) :
         theta = theta2
         otheta = theta1
     #find next intersection point and distance to that point
-    interX, interY = find_first_intersection_point(startX, startY, theta, width, height)
+    (interX, interY), xCollision = find_first_intersection_point(startX, startY, theta, width, height)
     vectorLength = euclidean_distance((startX, startY), (interX, interY))
 
     #check to make sure this exact vector hasn't been added to the graph before
@@ -211,14 +211,33 @@ def createArray(ax, startX, startY, theta1, theta2, thetaOne, width, height) :
         VECTOR_COUNT += 1
         #can add to the vector count after we make sure this isn't a duplicate vector and is in range of graph
 
-    #draw the next vector if it is still in the graph
-    if( interX < width and interY < height and interY >= 0 ) :
-        createArray(ax, interX, interY, theta1, theta2, not thetaOne, width, height)
-        createArray(ax, interX, interY, -theta1, -theta2, not thetaOne, width, height)
+    #recursively create new vectors
+    if(xCollision) :
+        if( interX < width and interY < height and interY >= 0 ) :
+            createArray(ax, interX, interY, theta1, theta2, not thetaOne, width, height)
+            createArray(ax, interX, interY, -theta1, -theta2, not thetaOne, width, height)
 
-    #edge case check to reflect vectors at the top of the grid back down
-    if( interX < width and interY == height and otheta > 0 ) :
-        createArray(ax, interX, interY, -theta1, -theta2, not thetaOne, width, height )
+        #edge case check to reflect vectors at the top of the grid back down
+        if( interX < width and interY == height and otheta > 0 ) :
+            createArray(ax, interX, interY, -theta1, -theta2, not thetaOne, width, height )
+
+    else :
+        if(theta > 0) :
+            if( interX < width and interY < height and interY >= 0 ) :
+                createArray(ax, interX, interY, theta1, theta2, not thetaOne, width, height)
+                createArray(ax, interX, interY, -theta1, -theta2, thetaOne, width, height)
+
+            #edge case check to reflect vectors at the top of the grid back down
+            if( interX < width and interY == height and otheta > 0 ) :
+                createArray(ax, interX, interY, -theta1, -theta2, thetaOne, width, height )
+        else :
+            if( interX < width and interY < height and interY >= 0 ) :
+                createArray(ax, interX, interY, theta1, theta2, not thetaOne, width, height)
+                createArray(ax, interX, interY, -theta1, -theta2, thetaOne, width, height)
+
+            #edge case check to reflect vectors at the top of the grid back down
+            if( interX < width and interY == height and otheta > 0 ) :
+                createArray(ax, interX, interY, -theta1, -theta2, not thetaOne, width, height )
 
 
 def main():
@@ -267,8 +286,6 @@ def main():
             startPoint = float(startPoint_input.text)
             width = int(width_input.text)
             height = int(height_input.text)
-
-            #draw checkerboard with dimensions (4, 6)
 
             draw_checkerboard_just_ax(height, width, 1, ax)
             theta1 = float(theta1_input.text)
