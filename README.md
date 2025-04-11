@@ -10,7 +10,9 @@ Python script to create an interactive visualization of a recursive vector refle
 Script visualizes how waves propogate through different gradients and allow users to quickly identify whether the waves growth is bounded or not. 
 
 Visual Example of a Bounded Growth Wave :
+
 ![Bounded Growth Wave](examples/bounded.png)
 
 Visual Example of an Unbounded Growth Wave : 
+
 ![Unbounded Growth Wave](examples/unbounded.png)
