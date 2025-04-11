@@ -12,7 +12,6 @@ import time
 VECTOR_COUNT = 0
 VECTOR_HASH = {}
 
-
 def add_vector_to_graph(ax, x, y, angle_degrees, length, color='red'):
     """
     Add a vector to a Matplotlib axis.
@@ -296,7 +295,7 @@ def main():
 
             createArray(ax, startX, startY, theta1, theta2, True, width, height)
             createArray(ax, startX, startY, -theta1, -theta2, True, width, height)
-            text_box.set_text("Unique Vector Count :" + str(VECTOR_COUNT)) #str(VECTOR_COUNT))
+            text_box.set_text("Unique Vector Count :" + str(VECTOR_COUNT)) 
             plt.grid()
             plt.show()
 
