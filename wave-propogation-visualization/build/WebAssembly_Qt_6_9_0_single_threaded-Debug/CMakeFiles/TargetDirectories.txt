@@ -1,0 +1,9 @@
+/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Debug/CMakeFiles/wave-propogation-visualization.dir
+/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Debug/CMakeFiles/edit_cache.dir
+/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Debug/CMakeFiles/rebuild_cache.dir
+/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Debug/CMakeFiles/list_install_components.dir
+/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Debug/CMakeFiles/install.dir
+/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Debug/CMakeFiles/install/local.dir
+/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Debug/CMakeFiles/install/strip.dir
+/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Debug/CMakeFiles/wave-propogation-visualization_autogen_timestamp_deps.dir
+/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Debug/CMakeFiles/wave-propogation-visualization_autogen.dir
