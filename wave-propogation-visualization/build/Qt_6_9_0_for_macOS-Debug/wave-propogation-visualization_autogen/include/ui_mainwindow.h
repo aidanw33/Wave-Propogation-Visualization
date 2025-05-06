@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -31,9 +32,13 @@ public:
     QGridLayout *gridLayout;
     QSpinBox *column_setter;
     GridWidget *graph;
-    QSpinBox *rows_setter;
     QLabel *rows_label;
     QLabel *column_label;
+    QDoubleSpinBox *doubleSpinBox_2;
+    QSpinBox *rows_setter;
+    QLabel *label_2;
+    QDoubleSpinBox *doubleSpinBox;
+    QLabel *label;
     QLabel *graph_label;
     QMenuBar *menubar;
     QMenu *menuapp_name;
@@ -62,14 +67,6 @@ public:
 
         gridLayout->addWidget(graph, 0, 1, 1, 1);
 
-        rows_setter = new QSpinBox(centralwidget);
-        rows_setter->setObjectName("rows_setter");
-        rows_setter->setMinimum(2);
-        rows_setter->setMaximum(20);
-        rows_setter->setValue(5);
-
-        gridLayout->addWidget(rows_setter, 1, 1, 1, 1);
-
         rows_label = new QLabel(centralwidget);
         rows_label->setObjectName("rows_label");
 
@@ -80,13 +77,42 @@ public:
 
         gridLayout->addWidget(column_label, 2, 0, 1, 1);
 
+        doubleSpinBox_2 = new QDoubleSpinBox(centralwidget);
+        doubleSpinBox_2->setObjectName("doubleSpinBox_2");
+        doubleSpinBox_2->setValue(45.000000000000000);
+
+        gridLayout->addWidget(doubleSpinBox_2, 4, 1, 1, 1);
+
+        rows_setter = new QSpinBox(centralwidget);
+        rows_setter->setObjectName("rows_setter");
+        rows_setter->setMinimum(2);
+        rows_setter->setMaximum(20);
+        rows_setter->setValue(5);
+
+        gridLayout->addWidget(rows_setter, 1, 1, 1, 1);
+
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+
+        gridLayout->addWidget(label_2, 4, 0, 1, 1);
+
+        doubleSpinBox = new QDoubleSpinBox(centralwidget);
+        doubleSpinBox->setObjectName("doubleSpinBox");
+        doubleSpinBox->setValue(0.000000000000000);
+
+        gridLayout->addWidget(doubleSpinBox, 3, 1, 1, 1);
+
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+
+        gridLayout->addWidget(label, 3, 0, 1, 1);
+
         graph_label = new QLabel(centralwidget);
         graph_label->setObjectName("graph_label");
 
         gridLayout->addWidget(graph_label, 0, 0, 1, 1);
 
-        gridLayout->setColumnStretch(0, 1);
-        gridLayout->setColumnStretch(1, 10);
+        gridLayout->setColumnStretch(1, 1);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -110,6 +136,8 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         rows_label->setText(QCoreApplication::translate("MainWindow", "Rows", nullptr));
         column_label->setText(QCoreApplication::translate("MainWindow", "Columns", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Start Angle", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Start Point", nullptr));
         graph_label->setText(QCoreApplication::translate("MainWindow", "Graph", nullptr));
         menuapp_name->setTitle(QCoreApplication::translate("MainWindow", "app name", nullptr));
     } // retranslateUi
