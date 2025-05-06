@@ -116,7 +116,9 @@ def find_first_intersection_point(x, y, angle_degrees, width, height):
     # Find the next vertical asymptote to reach at x = targetX
     targetX = next((x_val for x_val in np.arange(0, width + 1) if x_val > x), None)
 
+    #I want to edit so that it only find the 
     # Find the first intersection point with horizontal grid lines at y = targetY
+    
     if(angle_degrees < 0) :
         targetY = next((y_val for y_val in np.arange(0, height + 1) if y_val >= y and y_val <= height), None)    
         targetY -= 1
@@ -212,6 +214,11 @@ def createArray(ax, startX, startY, theta1, theta2, thetaOne, width, height) :
 
     #recursively create new vectors
     if(xCollision) :
+        #if we collided with a horizantal that is inbetween an odd and even number e.i. 1.3 do not collide, continue at same angle
+        if(int(interX) % 2 == 1) :
+            createArray(ax, interX, interY, theta1, theta2, thetaOne, width, height)
+        
+
         if( interX < width and interY < height and interY >= 0 ) :
             createArray(ax, interX, interY, theta1, theta2, not thetaOne, width, height)
             createArray(ax, interX, interY, -theta1, -theta2, not thetaOne, width, height)
@@ -221,6 +228,11 @@ def createArray(ax, startX, startY, theta1, theta2, thetaOne, width, height) :
             createArray(ax, interX, interY, -theta1, -theta2, not thetaOne, width, height )
 
     else :
+        #if y collision 
+        if(int(interY) % 2 == 1) :
+            createArray(ax, interX, interY, theta1, theta2, thetaOne, width, height)
+
+
         if(theta > 0) :
             if( interX < width and interY < height and interY >= 0 ) :
                 createArray(ax, interX, interY, theta1, theta2, not thetaOne, width, height)
