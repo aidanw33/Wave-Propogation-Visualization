@@ -3,7 +3,7 @@
 pip install matplotlib numpy
 python graph.py 
 ```
-  
+Visit the application on web [here](https://wave-propogation-visualization.vercel.app).  
 
 Python script to create an interactive visualization of a recursive vector reflection pattern on a checkerboard grid. Developed for use at the University of Utah Math Department for research for iteration on ideas first found [here](https://arxiv.org/abs/1705.00539). 
 
