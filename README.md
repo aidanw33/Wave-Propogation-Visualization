@@ -15,4 +15,5 @@ Visual Example of a Bounded Growth Wave :
 
 Visual Example of an Unbounded Growth Wave : 
 
+![Unbounded Growth Wave(C++)](examples/unbounded_cpp.png)
 ![Unbounded Growth Wave](examples/unbounded.png)
