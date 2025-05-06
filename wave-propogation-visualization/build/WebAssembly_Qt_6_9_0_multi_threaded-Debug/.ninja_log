@@ -1,0 +1,16 @@
+# ninja log v6
+2	218	1746569220317825894	wave-propogation-visualization_autogen/timestamp	7e8271bdb91fa843
+2	218	1746569220317825894	wave-propogation-visualization_autogen/mocs_compilation.cpp	7e8271bdb91fa843
+2	218	1746569220317825894	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Debug/wave-propogation-visualization_autogen/timestamp	7e8271bdb91fa843
+2	218	1746569220317825894	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Debug/wave-propogation-visualization_autogen/mocs_compilation.cpp	7e8271bdb91fa843
+219	1589	1746569220327091095	CMakeFiles/wave-propogation-visualization.dir/main.cpp.o	4ff857b0b63a20f7
+219	1607	1746569220326893892	CMakeFiles/wave-propogation-visualization.dir/wave-propogation-visualization_autogen/mocs_compilation.cpp.o	de94790fbb07c7c2
+220	1681	1746569220327311632	CMakeFiles/wave-propogation-visualization.dir/gridwidget.cpp.o	7fd01c9ef11db3b6
+220	1691	1746569220327199176	CMakeFiles/wave-propogation-visualization.dir/mainwindow.cpp.o	71246002f0e101e5
+1691	4221	1746569221798751874	wave-propogation-visualization.js	d299318afb7807c8
+6	48	1746569379671456781	wave-propogation-visualization_autogen/timestamp	7e8271bdb91fa843
+6	48	1746569379671456781	wave-propogation-visualization_autogen/mocs_compilation.cpp	7e8271bdb91fa843
+6	48	1746569379671456781	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Debug/wave-propogation-visualization_autogen/timestamp	7e8271bdb91fa843
+6	48	1746569379671456781	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Debug/wave-propogation-visualization_autogen/mocs_compilation.cpp	7e8271bdb91fa843
+48	1489	1746569379714065958	CMakeFiles/wave-propogation-visualization.dir/mainwindow.cpp.o	71246002f0e101e5
+1489	3077	1746569381154768873	wave-propogation-visualization.js	d299318afb7807c8

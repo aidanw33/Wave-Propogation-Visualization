@@ -32,9 +32,7 @@ void GridWidget::paintEvent(QPaintEvent *) {
     }
 
     // Draw the rays onto the checkboard pattern
-    painter.setPen(QPen(Qt::red, 1));  // red rays, 2px thick
-
-    std::cout << rays.size() << "Vectors" << std::endl;
+    painter.setPen(QPen(Qt::red, 1));  // red rays, 1px thick
 
     for (const auto& ray : rays) {
         double x1 = ray[0];

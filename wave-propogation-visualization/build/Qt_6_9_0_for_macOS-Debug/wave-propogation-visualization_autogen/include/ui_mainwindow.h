@@ -31,19 +31,19 @@ class Ui_FieldPatterns
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QLabel *graph_label;
-    QSpinBox *column_setter;
-    QLabel *angle2_label;
     QDoubleSpinBox *angle2_setter;
+    QLabel *column_label;
+    QLabel *angle2_label;
+    QLabel *rows_label;
+    QDoubleSpinBox *angle1_setter;
+    QPushButton *refresh_button;
+    QSpinBox *column_setter;
     GridWidget *graph;
     QSpinBox *rows_setter;
-    QDoubleSpinBox *startPoint_setter;
-    QLabel *column_label;
-    QLabel *rows_label;
     QLabel *startPoint_label;
-    QDoubleSpinBox *angle1_setter;
+    QLabel *graph_label;
+    QDoubleSpinBox *startPoint_setter;
     QLabel *angle1_label;
-    QPushButton *refresh_button;
     QMenuBar *menubar;
     QMenu *menuapp_name;
     QStatusBar *statusbar;
@@ -57,10 +57,37 @@ public:
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName("gridLayout");
-        graph_label = new QLabel(centralwidget);
-        graph_label->setObjectName("graph_label");
+        angle2_setter = new QDoubleSpinBox(centralwidget);
+        angle2_setter->setObjectName("angle2_setter");
+        angle2_setter->setValue(45.000000000000000);
 
-        gridLayout->addWidget(graph_label, 0, 0, 1, 1);
+        gridLayout->addWidget(angle2_setter, 5, 1, 1, 1);
+
+        column_label = new QLabel(centralwidget);
+        column_label->setObjectName("column_label");
+
+        gridLayout->addWidget(column_label, 2, 0, 1, 1);
+
+        angle2_label = new QLabel(centralwidget);
+        angle2_label->setObjectName("angle2_label");
+
+        gridLayout->addWidget(angle2_label, 5, 0, 1, 1);
+
+        rows_label = new QLabel(centralwidget);
+        rows_label->setObjectName("rows_label");
+
+        gridLayout->addWidget(rows_label, 1, 0, 1, 1);
+
+        angle1_setter = new QDoubleSpinBox(centralwidget);
+        angle1_setter->setObjectName("angle1_setter");
+        angle1_setter->setValue(45.000000000000000);
+
+        gridLayout->addWidget(angle1_setter, 4, 1, 1, 1);
+
+        refresh_button = new QPushButton(centralwidget);
+        refresh_button->setObjectName("refresh_button");
+
+        gridLayout->addWidget(refresh_button, 6, 0, 1, 2);
 
         column_setter = new QSpinBox(centralwidget);
         column_setter->setObjectName("column_setter");
@@ -69,17 +96,6 @@ public:
         column_setter->setValue(5);
 
         gridLayout->addWidget(column_setter, 2, 1, 1, 1);
-
-        angle2_label = new QLabel(centralwidget);
-        angle2_label->setObjectName("angle2_label");
-
-        gridLayout->addWidget(angle2_label, 5, 0, 1, 1);
-
-        angle2_setter = new QDoubleSpinBox(centralwidget);
-        angle2_setter->setObjectName("angle2_setter");
-        angle2_setter->setValue(45.000000000000000);
-
-        gridLayout->addWidget(angle2_setter, 5, 1, 1, 1);
 
         graph = new GridWidget(centralwidget);
         graph->setObjectName("graph");
@@ -95,44 +111,29 @@ public:
 
         gridLayout->addWidget(rows_setter, 1, 1, 1, 1);
 
+        startPoint_label = new QLabel(centralwidget);
+        startPoint_label->setObjectName("startPoint_label");
+
+        gridLayout->addWidget(startPoint_label, 3, 0, 1, 1);
+
+        graph_label = new QLabel(centralwidget);
+        graph_label->setObjectName("graph_label");
+
+        gridLayout->addWidget(graph_label, 0, 0, 1, 1);
+
         startPoint_setter = new QDoubleSpinBox(centralwidget);
         startPoint_setter->setObjectName("startPoint_setter");
         startPoint_setter->setValue(0.000000000000000);
 
         gridLayout->addWidget(startPoint_setter, 3, 1, 1, 1);
 
-        column_label = new QLabel(centralwidget);
-        column_label->setObjectName("column_label");
-
-        gridLayout->addWidget(column_label, 2, 0, 1, 1);
-
-        rows_label = new QLabel(centralwidget);
-        rows_label->setObjectName("rows_label");
-
-        gridLayout->addWidget(rows_label, 1, 0, 1, 1);
-
-        startPoint_label = new QLabel(centralwidget);
-        startPoint_label->setObjectName("startPoint_label");
-
-        gridLayout->addWidget(startPoint_label, 3, 0, 1, 1);
-
-        angle1_setter = new QDoubleSpinBox(centralwidget);
-        angle1_setter->setObjectName("angle1_setter");
-        angle1_setter->setValue(45.000000000000000);
-
-        gridLayout->addWidget(angle1_setter, 4, 1, 1, 1);
-
         angle1_label = new QLabel(centralwidget);
         angle1_label->setObjectName("angle1_label");
 
         gridLayout->addWidget(angle1_label, 4, 0, 1, 1);
 
-        refresh_button = new QPushButton(centralwidget);
-        refresh_button->setObjectName("refresh_button");
-
-        gridLayout->addWidget(refresh_button, 6, 0, 1, 2);
-
-        gridLayout->setColumnStretch(1, 1);
+        gridLayout->setColumnStretch(0, 1);
+        gridLayout->setColumnStretch(1, 10);
         FieldPatterns->setCentralWidget(centralwidget);
         menubar = new QMenuBar(FieldPatterns);
         menubar->setObjectName("menubar");
@@ -153,14 +154,14 @@ public:
 
     void retranslateUi(QMainWindow *FieldPatterns)
     {
-        FieldPatterns->setWindowTitle(QCoreApplication::translate("FieldPatterns", "MainWindow", nullptr));
-        graph_label->setText(QCoreApplication::translate("FieldPatterns", "Graph", nullptr));
-        angle2_label->setText(QCoreApplication::translate("FieldPatterns", "Angle 2", nullptr));
+        FieldPatterns->setWindowTitle(QCoreApplication::translate("FieldPatterns", "Field Patterns", nullptr));
         column_label->setText(QCoreApplication::translate("FieldPatterns", "Columns", nullptr));
+        angle2_label->setText(QCoreApplication::translate("FieldPatterns", "Angle 2", nullptr));
         rows_label->setText(QCoreApplication::translate("FieldPatterns", "Rows", nullptr));
-        startPoint_label->setText(QCoreApplication::translate("FieldPatterns", "Start Point", nullptr));
-        angle1_label->setText(QCoreApplication::translate("FieldPatterns", "Angle 1", nullptr));
         refresh_button->setText(QCoreApplication::translate("FieldPatterns", "Refresh", nullptr));
+        startPoint_label->setText(QCoreApplication::translate("FieldPatterns", "Start Point", nullptr));
+        graph_label->setText(QCoreApplication::translate("FieldPatterns", "Graph", nullptr));
+        angle1_label->setText(QCoreApplication::translate("FieldPatterns", "Angle 1", nullptr));
         menuapp_name->setTitle(QCoreApplication::translate("FieldPatterns", "app name", nullptr));
     } // retranslateUi
 

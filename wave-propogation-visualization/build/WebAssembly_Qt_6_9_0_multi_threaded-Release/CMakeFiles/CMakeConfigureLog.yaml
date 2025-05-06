@@ -1,0 +1,225 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The target system is: Emscripten - 1 - x86
+      The host system is: Darwin - 24.4.0 - arm64
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/FindThreads.cmake:99 (CHECK_CXX_SOURCE_COMPILES)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/Qt6Dependencies.cmake:34 (_qt_internal_find_third_party_dependencies)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/Qt6Config.cmake:162 (include)"
+      - "CMakeLists.txt:12 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-auj4Oj"
+      binary: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-auj4Oj"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/platforms;/Users/aidanwilde/emsdk/upstream/emscripten/cmake/Modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/kwin"
+      QT_ADDITIONAL_PACKAGES_PREFIX_PATH: ""
+      QT_CHAINLOAD_TOOLCHAIN_FILE: ""
+      QT_TOOLCHAIN_INCLUDE_FILE: ""
+      QT_TOOLCHAIN_RELOCATABLE_CMAKE_DIR: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake"
+      QT_TOOLCHAIN_RELOCATABLE_PREFIX: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-auj4Oj'
+        
+        Run Build Command(s): /Users/aidanwilde/Qt/Tools/Ninja/ninja -v cmTC_4a9bf
+        [1/2] /Users/aidanwilde/emsdk/upstream/emscripten/em++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -MD -MT CMakeFiles/cmTC_4a9bf.dir/src.cxx.o -MF CMakeFiles/cmTC_4a9bf.dir/src.cxx.o.d -o CMakeFiles/cmTC_4a9bf.dir/src.cxx.o -c /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-auj4Oj/src.cxx
+        [2/2] : && /Users/aidanwilde/emsdk/upstream/emscripten/em++   CMakeFiles/cmTC_4a9bf.dir/src.cxx.o -o cmTC_4a9bf.js   && :
+        cache:INFO: generating system asset: symbol_lists/dae99d994d603fb13aa7edd6245a890f9752f2c4.json... (this will be cached in "/Users/aidanwilde/emsdk/upstream/emscripten/cache/symbol_lists/dae99d994d603fb13aa7edd6245a890f9752f2c4.json" for subsequent builds)
+        cache:INFO:  - ok
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:45 (include)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:137 (find_dependency)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/Qt6Config.cmake:212 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Performing Test HAVE_STDATOMIC"
+    directories:
+      source: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-ROrmDL"
+      binary: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-ROrmDL"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/platforms;/Users/aidanwilde/emsdk/upstream/emscripten/cmake/Modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/kwin;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/kwin"
+      QT_ADDITIONAL_PACKAGES_PREFIX_PATH: ""
+      QT_CHAINLOAD_TOOLCHAIN_FILE: ""
+      QT_TOOLCHAIN_INCLUDE_FILE: ""
+      QT_TOOLCHAIN_RELOCATABLE_CMAKE_DIR: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake"
+      QT_TOOLCHAIN_RELOCATABLE_PREFIX: ""
+    buildResult:
+      variable: "HAVE_STDATOMIC"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-ROrmDL'
+        
+        Run Build Command(s): /Users/aidanwilde/Qt/Tools/Ninja/ninja -v cmTC_5866f
+        [1/2] /Users/aidanwilde/emsdk/upstream/emscripten/em++ -DHAVE_STDATOMIC  -std=gnu++17 -MD -MT CMakeFiles/cmTC_5866f.dir/src.cxx.o -MF CMakeFiles/cmTC_5866f.dir/src.cxx.o.d -o CMakeFiles/cmTC_5866f.dir/src.cxx.o -c /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-ROrmDL/src.cxx
+        [2/2] : && /Users/aidanwilde/emsdk/upstream/emscripten/em++   CMakeFiles/cmTC_5866f.dir/src.cxx.o -o cmTC_5866f.js   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/FindWrapRt.cmake:23 (check_cxx_source_compiles)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:45 (include)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:137 (find_dependency)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/Qt6Config.cmake:212 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Performing Test HAVE_GETTIME"
+    directories:
+      source: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-xB8KGB"
+      binary: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-xB8KGB"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/platforms;/Users/aidanwilde/emsdk/upstream/emscripten/cmake/Modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/kwin;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/kwin"
+      QT_ADDITIONAL_PACKAGES_PREFIX_PATH: ""
+      QT_CHAINLOAD_TOOLCHAIN_FILE: ""
+      QT_TOOLCHAIN_INCLUDE_FILE: ""
+      QT_TOOLCHAIN_RELOCATABLE_CMAKE_DIR: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake"
+      QT_TOOLCHAIN_RELOCATABLE_PREFIX: ""
+    buildResult:
+      variable: "HAVE_GETTIME"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-xB8KGB'
+        
+        Run Build Command(s): /Users/aidanwilde/Qt/Tools/Ninja/ninja -v cmTC_9f958
+        [1/2] /Users/aidanwilde/emsdk/upstream/emscripten/em++ -DHAVE_GETTIME  -std=gnu++17 -MD -MT CMakeFiles/cmTC_9f958.dir/src.cxx.o -MF CMakeFiles/cmTC_9f958.dir/src.cxx.o.d -o CMakeFiles/cmTC_9f958.dir/src.cxx.o -c /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-xB8KGB/src.cxx
+        [2/2] : && /Users/aidanwilde/emsdk/upstream/emscripten/em++   CMakeFiles/cmTC_9f958.dir/src.cxx.o -o cmTC_9f958.js   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/FindWrapRt.cmake:34 (check_cxx_source_compiles)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:45 (include)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:137 (find_dependency)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/Qt6Config.cmake:212 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Performing Test HAVE_SHM_OPEN_SHM_UNLINK"
+    directories:
+      source: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-Xv1gpO"
+      binary: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-Xv1gpO"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/platforms;/Users/aidanwilde/emsdk/upstream/emscripten/cmake/Modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/kwin;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/kwin"
+      QT_ADDITIONAL_PACKAGES_PREFIX_PATH: ""
+      QT_CHAINLOAD_TOOLCHAIN_FILE: ""
+      QT_TOOLCHAIN_INCLUDE_FILE: ""
+      QT_TOOLCHAIN_RELOCATABLE_CMAKE_DIR: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake"
+      QT_TOOLCHAIN_RELOCATABLE_PREFIX: ""
+    buildResult:
+      variable: "HAVE_SHM_OPEN_SHM_UNLINK"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-Xv1gpO'
+        
+        Run Build Command(s): /Users/aidanwilde/Qt/Tools/Ninja/ninja -v cmTC_af50f
+        [1/2] /Users/aidanwilde/emsdk/upstream/emscripten/em++ -DHAVE_SHM_OPEN_SHM_UNLINK  -std=gnu++17 -MD -MT CMakeFiles/cmTC_af50f.dir/src.cxx.o -MF CMakeFiles/cmTC_af50f.dir/src.cxx.o.d -o CMakeFiles/cmTC_af50f.dir/src.cxx.o -c /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-Xv1gpO/src.cxx
+        [2/2] : && /Users/aidanwilde/emsdk/upstream/emscripten/em++   CMakeFiles/cmTC_af50f.dir/src.cxx.o -o cmTC_af50f.js   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/FindEGL.cmake:128 (check_cxx_source_compiles)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:39 (_qt_internal_find_third_party_dependencies)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:43 (include)"
+      - "/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:137 (find_dependency)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
+      - "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/Qt6Config.cmake:212 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Performing Test HAVE_EGL"
+    directories:
+      source: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-m437uE"
+      binary: "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-m437uE"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/platforms;/Users/aidanwilde/emsdk/upstream/emscripten/cmake/Modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/kwin;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake/Qt6/3rdparty/kwin"
+      QT_ADDITIONAL_PACKAGES_PREFIX_PATH: ""
+      QT_CHAINLOAD_TOOLCHAIN_FILE: ""
+      QT_TOOLCHAIN_INCLUDE_FILE: ""
+      QT_TOOLCHAIN_RELOCATABLE_CMAKE_DIR: "/Users/aidanwilde/Qt/6.9.0/wasm_multithread/lib/cmake"
+      QT_TOOLCHAIN_RELOCATABLE_PREFIX: ""
+    buildResult:
+      variable: "HAVE_EGL"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-m437uE'
+        
+        Run Build Command(s): /Users/aidanwilde/Qt/Tools/Ninja/ninja -v cmTC_51599
+        [1/2] /Users/aidanwilde/emsdk/upstream/emscripten/em++ -DHAVE_EGL  -std=gnu++17 -MD -MT CMakeFiles/cmTC_51599.dir/src.cxx.o -MF CMakeFiles/cmTC_51599.dir/src.cxx.o.d -o CMakeFiles/cmTC_51599.dir/src.cxx.o -c /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/CMakeFiles/CMakeScratch/TryCompile-m437uE/src.cxx
+        [2/2] : && /Users/aidanwilde/emsdk/upstream/emscripten/em++   CMakeFiles/cmTC_51599.dir/src.cxx.o -o cmTC_51599.js   && :
+        
+      exitCode: 0
+...
