@@ -24,10 +24,12 @@ private:
     double start = 0; //default start point
     double angle1 = 45; //default start angle
     double angle2 = 45; //default start angle
-    std::vector<std::array<double, 4>> rays;  //rays to draw onto the grid
-    std::vector<std::array<double, 4>> calculateRays(double start_point, double start_angle); //calculates the rays from a starting point and angle
+    void calculateRays(double start_point, double start_angle); //calculates the rays from a starting point and angle
     void calculatePositiveRays(double start_point_x, double start_point_y, double start_angle, double height_array[], double length_array[]);
     void calculateNegativeRays(double start_point_x, double start_point_y, double start_angle, double height_array[], double length_array[]);
+    struct ArrayHash {std::size_t operator()(const std::array<double, 4>& arr) const;};
+    struct ArrayEqual {bool operator()(const std::array<double, 4>& a, const std::array<double, 4>& b) const;};
+    std::unordered_set<std::array<double, 4>, ArrayHash, ArrayEqual> rays; //create a set to store the vectors in
 
 };
 

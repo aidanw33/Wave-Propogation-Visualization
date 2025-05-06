@@ -34,6 +34,8 @@ void GridWidget::paintEvent(QPaintEvent *) {
     // Draw the rays onto the checkboard pattern
     painter.setPen(QPen(Qt::red, 1));  // red rays, 2px thick
 
+    std::cout << rays.size() << "Vectors" << std::endl;
+
     for (const auto& ray : rays) {
         double x1 = ray[0];
         double y1 = ray[1];
@@ -75,7 +77,7 @@ void GridWidget::refresh() {
     update();
 }
 
-std::vector<std::array<double, 4>> GridWidget::calculateRays(double start_point, double start_angle) {
+void GridWidget::calculateRays(double start_point, double start_angle) {
 
     //Create the matrixes which will be used to find the intersection point
     double total_height = 2;
@@ -97,9 +99,6 @@ std::vector<std::array<double, 4>> GridWidget::calculateRays(double start_point,
     //Calculate intersection points
     calculatePositiveRays(-1, start_point, start_angle, height_array, length_array);
     calculateNegativeRays(-1, start_point, start_angle, height_array, length_array);
-
-    return rays;
-
 }
 
 
@@ -107,13 +106,13 @@ void GridWidget::calculatePositiveRays(double start_point_x, double start_point_
     double ceiling = 1;
     double wall    = 1;
     for(int i = 0; i < rows + 1; ++i) {
-        if (height_array[i] > start_point_y){
+        if (height_array[i] > start_point_y){ //NOLINT
             ceiling = height_array[i];
             break;
         }
     }
     for(int i = 0; i < cols + 1; ++i) {
-        if (length_array[i] > start_point_x){
+        if (length_array[i] > start_point_x){ //NOLINT
             wall = length_array[i];
             break;
         }
@@ -133,12 +132,17 @@ void GridWidget::calculatePositiveRays(double start_point_x, double start_point_
     //add a line to the closer distance
     if (wall_distance < ceiling_distance) {
         std::array<double, 4> ray = {start_point_x, start_point_y, wall, wall_y};
-        rays.push_back(ray);
+        auto [iterator, inserted] = rays.insert(ray);
+        if (!inserted) {
+            return;
+        }
     }
     else {
         std::array<double, 4> ray = {start_point_x, start_point_y, ceiling_x, ceiling};
-        rays.push_back(ray);
-    }
+        auto [iterator, inserted] = rays.insert(ray);
+        if (!inserted) {
+            return;
+        }    }
 
     //add a line recursively
     if (wall_distance < ceiling_distance) {
@@ -165,13 +169,13 @@ void GridWidget::calculateNegativeRays(double start_point_x, double start_point_
     double floor = -1;
     double wall    =  1;
     for(int i = rows; i >= 0; --i) {
-        if (height_array[i] < start_point_y){
+        if (height_array[i] < start_point_y){ //NOLINT
             floor = height_array[i];
             break;
         }
     }
     for(int i = 0; i < cols + 1; ++i) {
-        if (length_array[i] > start_point_x){
+        if (length_array[i] > start_point_x){ //NOLINT
             wall = length_array[i];
             break;
         }
@@ -191,12 +195,16 @@ void GridWidget::calculateNegativeRays(double start_point_x, double start_point_
     //add a line to the closer distance
     if (wall_distance < floor_distance) {
         std::array<double, 4> ray = {start_point_x, start_point_y, wall, wall_y};
-        rays.push_back(ray);
-    }
+        auto [iterator, inserted] = rays.insert(ray);
+        if (!inserted) {
+            return;
+        }    }
     else {
         std::array<double, 4> ray = {start_point_x, start_point_y, floor_x, floor};
-        rays.push_back(ray);
-    }
+        auto [iterator, inserted] = rays.insert(ray);
+        if (!inserted) {
+            return;
+        }    }
 
     //add a line recursively
     if (wall_distance < floor_distance) {
@@ -217,4 +225,22 @@ void GridWidget::calculateNegativeRays(double start_point_x, double start_point_
 
 
     return;
+}
+
+std::size_t GridWidget::ArrayHash::operator()(const std::array<double, 4>& arr) const {
+    std::size_t seed = 0;
+    for (double val : arr) {
+        long long intVal = static_cast<long long>(std::round(val * 1e6));
+        seed ^= std::hash<long long>()(intVal) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+    }
+    return seed;
+}
+
+bool GridWidget::ArrayEqual::operator()(const std::array<double, 4>& a, const std::array<double, 4>& b) const {
+    const double eps = 1e-6;
+    for (int i = 0; i < 4; ++i) {
+        if (std::abs(a[i] - b[i]) > eps)
+            return false;
+    }
+    return true;
 }
