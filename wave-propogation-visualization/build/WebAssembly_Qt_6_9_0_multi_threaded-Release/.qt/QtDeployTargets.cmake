@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_wave-propogation-visualization_FILE /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_multi_threaded-Release/wave-propogation-visualization.js)
-set(__QT_DEPLOY_TARGET_wave-propogation-visualization_TYPE EXECUTABLE)
