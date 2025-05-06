@@ -18,6 +18,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -25,34 +26,42 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_MainWindow
+class Ui_FieldPatterns
 {
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QSpinBox *column_setter;
-    GridWidget *graph;
-    QLabel *rows_label;
-    QLabel *column_label;
-    QDoubleSpinBox *doubleSpinBox_2;
-    QSpinBox *rows_setter;
-    QLabel *label_2;
-    QDoubleSpinBox *doubleSpinBox;
-    QLabel *label;
     QLabel *graph_label;
+    QSpinBox *column_setter;
+    QLabel *angle2_label;
+    QDoubleSpinBox *angle2_setter;
+    GridWidget *graph;
+    QSpinBox *rows_setter;
+    QDoubleSpinBox *startPoint_setter;
+    QLabel *column_label;
+    QLabel *rows_label;
+    QLabel *startPoint_label;
+    QDoubleSpinBox *angle1_setter;
+    QLabel *angle1_label;
+    QPushButton *refresh_button;
     QMenuBar *menubar;
     QMenu *menuapp_name;
     QStatusBar *statusbar;
 
-    void setupUi(QMainWindow *MainWindow)
+    void setupUi(QMainWindow *FieldPatterns)
     {
-        if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 603);
-        centralwidget = new QWidget(MainWindow);
+        if (FieldPatterns->objectName().isEmpty())
+            FieldPatterns->setObjectName("FieldPatterns");
+        FieldPatterns->resize(800, 603);
+        centralwidget = new QWidget(FieldPatterns);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName("gridLayout");
+        graph_label = new QLabel(centralwidget);
+        graph_label->setObjectName("graph_label");
+
+        gridLayout->addWidget(graph_label, 0, 0, 1, 1);
+
         column_setter = new QSpinBox(centralwidget);
         column_setter->setObjectName("column_setter");
         column_setter->setMinimum(2);
@@ -61,27 +70,22 @@ public:
 
         gridLayout->addWidget(column_setter, 2, 1, 1, 1);
 
+        angle2_label = new QLabel(centralwidget);
+        angle2_label->setObjectName("angle2_label");
+
+        gridLayout->addWidget(angle2_label, 5, 0, 1, 1);
+
+        angle2_setter = new QDoubleSpinBox(centralwidget);
+        angle2_setter->setObjectName("angle2_setter");
+        angle2_setter->setValue(45.000000000000000);
+
+        gridLayout->addWidget(angle2_setter, 5, 1, 1, 1);
+
         graph = new GridWidget(centralwidget);
         graph->setObjectName("graph");
         graph->setMinimumSize(QSize(200, 200));
 
         gridLayout->addWidget(graph, 0, 1, 1, 1);
-
-        rows_label = new QLabel(centralwidget);
-        rows_label->setObjectName("rows_label");
-
-        gridLayout->addWidget(rows_label, 1, 0, 1, 1);
-
-        column_label = new QLabel(centralwidget);
-        column_label->setObjectName("column_label");
-
-        gridLayout->addWidget(column_label, 2, 0, 1, 1);
-
-        doubleSpinBox_2 = new QDoubleSpinBox(centralwidget);
-        doubleSpinBox_2->setObjectName("doubleSpinBox_2");
-        doubleSpinBox_2->setValue(45.000000000000000);
-
-        gridLayout->addWidget(doubleSpinBox_2, 4, 1, 1, 1);
 
         rows_setter = new QSpinBox(centralwidget);
         rows_setter->setObjectName("rows_setter");
@@ -91,61 +95,79 @@ public:
 
         gridLayout->addWidget(rows_setter, 1, 1, 1, 1);
 
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName("label_2");
+        startPoint_setter = new QDoubleSpinBox(centralwidget);
+        startPoint_setter->setObjectName("startPoint_setter");
+        startPoint_setter->setValue(0.000000000000000);
 
-        gridLayout->addWidget(label_2, 4, 0, 1, 1);
+        gridLayout->addWidget(startPoint_setter, 3, 1, 1, 1);
 
-        doubleSpinBox = new QDoubleSpinBox(centralwidget);
-        doubleSpinBox->setObjectName("doubleSpinBox");
-        doubleSpinBox->setValue(0.000000000000000);
+        column_label = new QLabel(centralwidget);
+        column_label->setObjectName("column_label");
 
-        gridLayout->addWidget(doubleSpinBox, 3, 1, 1, 1);
+        gridLayout->addWidget(column_label, 2, 0, 1, 1);
 
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
+        rows_label = new QLabel(centralwidget);
+        rows_label->setObjectName("rows_label");
 
-        gridLayout->addWidget(label, 3, 0, 1, 1);
+        gridLayout->addWidget(rows_label, 1, 0, 1, 1);
 
-        graph_label = new QLabel(centralwidget);
-        graph_label->setObjectName("graph_label");
+        startPoint_label = new QLabel(centralwidget);
+        startPoint_label->setObjectName("startPoint_label");
 
-        gridLayout->addWidget(graph_label, 0, 0, 1, 1);
+        gridLayout->addWidget(startPoint_label, 3, 0, 1, 1);
+
+        angle1_setter = new QDoubleSpinBox(centralwidget);
+        angle1_setter->setObjectName("angle1_setter");
+        angle1_setter->setValue(45.000000000000000);
+
+        gridLayout->addWidget(angle1_setter, 4, 1, 1, 1);
+
+        angle1_label = new QLabel(centralwidget);
+        angle1_label->setObjectName("angle1_label");
+
+        gridLayout->addWidget(angle1_label, 4, 0, 1, 1);
+
+        refresh_button = new QPushButton(centralwidget);
+        refresh_button->setObjectName("refresh_button");
+
+        gridLayout->addWidget(refresh_button, 6, 0, 1, 2);
 
         gridLayout->setColumnStretch(1, 1);
-        MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
+        FieldPatterns->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(FieldPatterns);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 800, 24));
         menuapp_name = new QMenu(menubar);
         menuapp_name->setObjectName("menuapp_name");
-        MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
+        FieldPatterns->setMenuBar(menubar);
+        statusbar = new QStatusBar(FieldPatterns);
         statusbar->setObjectName("statusbar");
-        MainWindow->setStatusBar(statusbar);
+        FieldPatterns->setStatusBar(statusbar);
 
         menubar->addAction(menuapp_name->menuAction());
 
-        retranslateUi(MainWindow);
+        retranslateUi(FieldPatterns);
 
-        QMetaObject::connectSlotsByName(MainWindow);
+        QMetaObject::connectSlotsByName(FieldPatterns);
     } // setupUi
 
-    void retranslateUi(QMainWindow *MainWindow)
+    void retranslateUi(QMainWindow *FieldPatterns)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        rows_label->setText(QCoreApplication::translate("MainWindow", "Rows", nullptr));
-        column_label->setText(QCoreApplication::translate("MainWindow", "Columns", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Start Angle", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Start Point", nullptr));
-        graph_label->setText(QCoreApplication::translate("MainWindow", "Graph", nullptr));
-        menuapp_name->setTitle(QCoreApplication::translate("MainWindow", "app name", nullptr));
+        FieldPatterns->setWindowTitle(QCoreApplication::translate("FieldPatterns", "MainWindow", nullptr));
+        graph_label->setText(QCoreApplication::translate("FieldPatterns", "Graph", nullptr));
+        angle2_label->setText(QCoreApplication::translate("FieldPatterns", "Angle 2", nullptr));
+        column_label->setText(QCoreApplication::translate("FieldPatterns", "Columns", nullptr));
+        rows_label->setText(QCoreApplication::translate("FieldPatterns", "Rows", nullptr));
+        startPoint_label->setText(QCoreApplication::translate("FieldPatterns", "Start Point", nullptr));
+        angle1_label->setText(QCoreApplication::translate("FieldPatterns", "Angle 1", nullptr));
+        refresh_button->setText(QCoreApplication::translate("FieldPatterns", "Refresh", nullptr));
+        menuapp_name->setTitle(QCoreApplication::translate("FieldPatterns", "app name", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class MainWindow: public Ui_MainWindow {};
+    class FieldPatterns: public Ui_FieldPatterns {};
 } // namespace Ui
 
 QT_END_NAMESPACE

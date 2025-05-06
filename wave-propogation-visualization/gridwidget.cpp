@@ -52,13 +52,27 @@ void GridWidget::paintEvent(QPaintEvent *) {
 
 void GridWidget::setRows(int r) {
     rows = r;
-    update();
 }
 
 void GridWidget::setCols(int c) {
     cols = c;
+}
+
+void GridWidget::setAngle1(double angle) {
+    angle1 = angle;
+}
+
+void GridWidget::setAngle2(double angle) {
+    angle2 = angle;
+}
+
+void GridWidget::setStart(double start_point) {
+    start = start_point;
+}
+
+void GridWidget::refresh() {
+    calculateRays(start, angle1);
     update();
-    calculateRays(0, 45.0);
 }
 
 std::vector<std::array<double, 4>> GridWidget::calculateRays(double start_point, double start_angle) {
@@ -82,7 +96,7 @@ std::vector<std::array<double, 4>> GridWidget::calculateRays(double start_point,
 
     //Calculate intersection points
     calculatePositiveRays(-1, start_point, start_angle, height_array, length_array);
-    calculateNegativeRays(-1, start_point, start_angle * (-1), height_array, length_array);
+    calculateNegativeRays(-1, start_point, start_angle, height_array, length_array);
 
     return rays;
 
@@ -90,8 +104,8 @@ std::vector<std::array<double, 4>> GridWidget::calculateRays(double start_point,
 
 
 void GridWidget::calculatePositiveRays(double start_point_x, double start_point_y, double start_angle, double height_array[], double length_array[]){
-    double ceiling = -2;
-    double wall    =  2;
+    double ceiling = 1;
+    double wall    = 1;
     for(int i = 0; i < rows + 1; ++i) {
         if (height_array[i] > start_point_y){
             ceiling = height_array[i];
@@ -126,10 +140,81 @@ void GridWidget::calculatePositiveRays(double start_point_x, double start_point_
         rays.push_back(ray);
     }
 
+    //add a line recursively
+    if (wall_distance < ceiling_distance) {
+        if (wall < 1) {
+            //hitting a wall, change the angle to whichever we aren't on
+            start_angle = (start_angle == angle1) ? angle2 : angle1;
+            calculatePositiveRays(wall, wall_y, start_angle, height_array, length_array);
+            calculateNegativeRays(wall, wall_y, start_angle, height_array, length_array);
+        }
+    }
+    else {
+        if (ceiling < 1) {
+            double alt_angle = (start_angle == angle1) ? angle2 : angle1;
+            calculatePositiveRays(ceiling_x, ceiling, alt_angle, height_array, length_array);
+            calculateNegativeRays(ceiling_x, ceiling, start_angle, height_array, length_array);
+        }
+    }
+
 
     return;
 
 }
 void GridWidget::calculateNegativeRays(double start_point_x, double start_point_y, double start_angle, double height_array[], double length_array[]){
+    double floor = -1;
+    double wall    =  1;
+    for(int i = rows; i >= 0; --i) {
+        if (height_array[i] < start_point_y){
+            floor = height_array[i];
+            break;
+        }
+    }
+    for(int i = 0; i < cols + 1; ++i) {
+        if (length_array[i] > start_point_x){
+            wall = length_array[i];
+            break;
+        }
+    }
 
+    //calculate the point that will collide with the floor
+    double slope = ((std::tan(start_angle * M_PI / 180.0)) * -1);
+    double floor_x = (start_point_y - floor - (slope*start_point_x))/(-1 * slope);
+
+    //calculate the point that will collide with the wall
+    double wall_y = ((-1 * slope) * (start_point_x - wall)) + start_point_y;
+
+    //find out which one is closer
+    double wall_distance    = std::sqrt((wall - start_point_x)*(wall - start_point_x) + (wall_y - start_point_y)*(wall_y - start_point_y));
+    double floor_distance = std::sqrt((floor_x - start_point_x)*(floor_x - start_point_x) + (floor - start_point_y)*(floor - start_point_y));
+
+    //add a line to the closer distance
+    if (wall_distance < floor_distance) {
+        std::array<double, 4> ray = {start_point_x, start_point_y, wall, wall_y};
+        rays.push_back(ray);
+    }
+    else {
+        std::array<double, 4> ray = {start_point_x, start_point_y, floor_x, floor};
+        rays.push_back(ray);
+    }
+
+    //add a line recursively
+    if (wall_distance < floor_distance) {
+        if (wall < 1) {
+            //hitting a wall, change the angle to whichever we aren't on
+            start_angle = (start_angle == angle1) ? angle2 : angle1;
+            calculateNegativeRays(wall, wall_y, start_angle, height_array, length_array);
+            calculatePositiveRays(wall, wall_y, start_angle, height_array, length_array);
+        }
+    }
+    else {
+        if (floor > -1) {
+            double alt_angle = (start_angle == angle1) ? angle2 : angle1;
+            calculateNegativeRays(floor_x, floor, alt_angle, height_array, length_array);
+            calculatePositiveRays(floor_x, floor, start_angle, height_array, length_array);
+        }
+    }
+
+
+    return;
 }
