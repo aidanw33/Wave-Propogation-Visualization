@@ -14,7 +14,50 @@
    <string>Field Patterns</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout" columnstretch="1,10">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="1,10,0">
+    <item row="0" column="1">
+     <widget class="QTabWidget" name="tab_selector">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="Checkerboard">
+       <attribute name="title">
+        <string>Checkerboard</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="GridWidget" name="graph" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>200</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+    <item row="6" column="0" colspan="3">
+     <widget class="QPushButton" name="refresh_button">
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="graph_label">
+      <property name="text">
+       <string>Graph</string>
+      </property>
+     </widget>
+    </item>
     <item row="5" column="1">
      <widget class="QDoubleSpinBox" name="angle2_setter">
       <property name="value">
@@ -22,10 +65,23 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="column_label">
-      <property name="text">
-       <string>Columns</string>
+    <item row="1" column="1">
+     <widget class="QSpinBox" name="rows_setter">
+      <property name="minimum">
+       <number>2</number>
+      </property>
+      <property name="maximum">
+       <number>20</number>
+      </property>
+      <property name="value">
+       <number>5</number>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QDoubleSpinBox" name="angle1_setter">
+      <property name="value">
+       <double>45.000000000000000</double>
       </property>
      </widget>
     </item>
@@ -43,17 +99,10 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="1">
-     <widget class="QDoubleSpinBox" name="angle1_setter">
+    <item row="3" column="1">
+     <widget class="QDoubleSpinBox" name="startPoint_setter">
       <property name="value">
-       <double>45.000000000000000</double>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0" colspan="2">
-     <widget class="QPushButton" name="refresh_button">
-      <property name="text">
-       <string>Refresh</string>
+       <double>0.000000000000000</double>
       </property>
      </widget>
     </item>
@@ -70,26 +119,17 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="GridWidget" name="graph" native="true">
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
-        <height>200</height>
-       </size>
+    <item row="4" column="0">
+     <widget class="QLabel" name="angle1_label">
+      <property name="text">
+       <string>Angle 1</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QSpinBox" name="rows_setter">
-      <property name="minimum">
-       <number>2</number>
-      </property>
-      <property name="maximum">
-       <number>20</number>
-      </property>
-      <property name="value">
-       <number>5</number>
+    <item row="2" column="0">
+     <widget class="QLabel" name="column_label">
+      <property name="text">
+       <string>Columns</string>
       </property>
      </widget>
     </item>
@@ -97,27 +137,6 @@
      <widget class="QLabel" name="startPoint_label">
       <property name="text">
        <string>Start Point</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="graph_label">
-      <property name="text">
-       <string>Graph</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QDoubleSpinBox" name="startPoint_setter">
-      <property name="value">
-       <double>0.000000000000000</double>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="angle1_label">
-      <property name="text">
-       <string>Angle 1</string>
       </property>
      </widget>
     </item>
