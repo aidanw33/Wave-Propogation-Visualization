@@ -1016,4 +1016,10 @@ CMakeFiles/wave-propogation-visualization.dir/mainwindow.cpp.o: \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers/qstatusbar.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers/QTabWidget \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+  /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.h \
+  /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.h \
+  /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/QPainter \
+  /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+  /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+  /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/qpen.h \
   /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/gridwidget.h

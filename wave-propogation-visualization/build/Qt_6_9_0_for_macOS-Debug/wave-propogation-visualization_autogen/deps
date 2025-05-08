@@ -851,6 +851,7 @@ wave-propogation-visualization_autogen/timestamp: \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
+	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/QPainter \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qaction.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qbrush.h \
@@ -864,13 +865,16 @@ wave-propogation-visualization_autogen/timestamp: \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qimage.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
+	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qpainter.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
+	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qpen.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qpolygon.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qregion.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
+	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextoption.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
@@ -1095,94 +1099,35 @@ wave-propogation-visualization_autogen/timestamp: \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	/Users/aidanwilde/Qt/6.9.0/macos/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCompilerIdDetection.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineCompilerSupport.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindBinUtils.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeGenericSystem.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeParseImplicitIncludeInfo.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeParseImplicitLinkInfo.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeParseLibraryArchitecture.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeSystem.cmake.in \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeTestCompilerCommon.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeUnixFindMake.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckLibraryExists.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/AppleClang-CXX.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Clang.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Cray-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/GHS-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/GNU.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/IAR-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Intel-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/PGI-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/SCO-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/TI-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/TIClang-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/FindOpenGL.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/FindPackageMessage.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/FindThreads.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/GNUInstallDirs.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Internal/FeatureTesting.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/MacroAddFileDependencies.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/Apple-AppleClang-CXX.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/Darwin-Determine-CXX.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/Darwin.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Platform/UnixPaths.cmake \
@@ -1191,6 +1136,10 @@ wave-propogation-visualization_autogen/timestamp: \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/moc_predefs.h \
+	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.cpp \
+	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.h \
+	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.cpp \
+	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.h \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/gridwidget.cpp \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/gridwidget.h \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/main.cpp \

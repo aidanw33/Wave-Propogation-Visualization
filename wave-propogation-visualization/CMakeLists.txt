@@ -25,6 +25,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         gridwidget.h
         gridwidget.cpp
+        fieldpatternwidget.h fieldpatternwidget.cpp
+        fieldpatternunit.h fieldpatternunit.cpp
     )
     target_include_directories(wave-propogation-visualization PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 

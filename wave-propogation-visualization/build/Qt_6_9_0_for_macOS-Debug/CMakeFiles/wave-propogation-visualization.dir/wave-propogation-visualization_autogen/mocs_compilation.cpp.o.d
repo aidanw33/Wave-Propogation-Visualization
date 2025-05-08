@@ -1,7 +1,7 @@
 CMakeFiles/wave-propogation-visualization.dir/wave-propogation-visualization_autogen/mocs_compilation.cpp.o: \
   /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/mocs_compilation.cpp \
-  /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/EWIEGA46WW/moc_gridwidget.cpp \
-  /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/EWIEGA46WW/../../../../gridwidget.h \
+  /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/EWIEGA46WW/moc_fieldpatternwidget.cpp \
+  /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/EWIEGA46WW/../../../../fieldpatternwidget.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers/QWidget \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
@@ -968,10 +968,17 @@ CMakeFiles/wave-propogation-visualization.dir/wave-propogation-visualization_aut
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers/qsizepolicy.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/qcursor.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+  /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/EWIEGA46WW/../../../../fieldpatternunit.h \
+  /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/QPainter \
+  /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+  /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+  /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Headers/qpen.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtCore.framework/Headers/qtmochelpers.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtCore.framework/Headers/qtmocconstants.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtCore.framework/Headers/q20algorithm.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtCore.framework/Headers/q23type_traits.h \
+  /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/EWIEGA46WW/moc_gridwidget.cpp \
+  /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/EWIEGA46WW/../../../../gridwidget.h \
   /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/EWIEGA46WW/moc_mainwindow.cpp \
   /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/wave-propogation-visualization_autogen/EWIEGA46WW/../../../../mainwindow.h \
   /Users/aidanwilde/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \

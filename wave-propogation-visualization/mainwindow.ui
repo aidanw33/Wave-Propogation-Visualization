@@ -37,17 +37,22 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="FieldPattern">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>FieldPattern</string>
        </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="FieldPatternWidget" name="fieldpatterngraph" native="true"/>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
-    <item row="6" column="0" colspan="3">
-     <widget class="QPushButton" name="refresh_button">
+    <item row="1" column="0">
+     <widget class="QLabel" name="rows_label">
       <property name="text">
-       <string>Refresh</string>
+       <string>Rows</string>
       </property>
      </widget>
     </item>
@@ -55,13 +60,6 @@
      <widget class="QLabel" name="graph_label">
       <property name="text">
        <string>Graph</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QDoubleSpinBox" name="angle2_setter">
-      <property name="value">
-       <double>45.000000000000000</double>
       </property>
      </widget>
     </item>
@@ -78,6 +76,13 @@
       </property>
      </widget>
     </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="column_label">
+      <property name="text">
+       <string>Columns</string>
+      </property>
+     </widget>
+    </item>
     <item row="4" column="1">
      <widget class="QDoubleSpinBox" name="angle1_setter">
       <property name="value">
@@ -85,17 +90,10 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="angle2_label">
-      <property name="text">
-       <string>Angle 2</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="rows_label">
-      <property name="text">
-       <string>Rows</string>
+    <item row="5" column="1">
+     <widget class="QDoubleSpinBox" name="angle2_setter">
+      <property name="value">
+       <double>45.000000000000000</double>
       </property>
      </widget>
     </item>
@@ -103,6 +101,27 @@
      <widget class="QDoubleSpinBox" name="startPoint_setter">
       <property name="value">
        <double>0.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0" colspan="3">
+     <widget class="QPushButton" name="refresh_button">
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="startPoint_label">
+      <property name="text">
+       <string>Start Point</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="angle1_label">
+      <property name="text">
+       <string>Angle 1</string>
       </property>
      </widget>
     </item>
@@ -119,24 +138,10 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="angle1_label">
+    <item row="5" column="0">
+     <widget class="QLabel" name="angle2_label">
       <property name="text">
-       <string>Angle 1</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="column_label">
-      <property name="text">
-       <string>Columns</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="startPoint_label">
-      <property name="text">
-       <string>Start Point</string>
+       <string>Angle 2</string>
       </property>
      </widget>
     </item>
@@ -165,6 +170,12 @@
    <class>GridWidget</class>
    <extends>QWidget</extends>
    <header>gridwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FieldPatternWidget</class>
+   <extends>QWidget</extends>
+   <header>fieldpatternwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

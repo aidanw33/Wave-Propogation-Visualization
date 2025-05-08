@@ -132,12 +132,42 @@ CMakeFiles/wave-propogation-visualization.dir/gridwidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wave-propogation-visualization.dir/gridwidget.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/gridwidget.cpp -o CMakeFiles/wave-propogation-visualization.dir/gridwidget.cpp.s
 
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o: CMakeFiles/wave-propogation-visualization.dir/flags.make
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o: /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.cpp
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o: CMakeFiles/wave-propogation-visualization.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o -MF CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o.d -o CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o -c /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.cpp
+
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.cpp > CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.i
+
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.cpp -o CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.s
+
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o: CMakeFiles/wave-propogation-visualization.dir/flags.make
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o: /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.cpp
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o: CMakeFiles/wave-propogation-visualization.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o -MF CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o.d -o CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o -c /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.cpp
+
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.cpp > CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.i
+
+CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.cpp -o CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.s
+
 # Object files for target wave-propogation-visualization
 wave__propogation__visualization_OBJECTS = \
 "CMakeFiles/wave-propogation-visualization.dir/wave-propogation-visualization_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/wave-propogation-visualization.dir/main.cpp.o" \
 "CMakeFiles/wave-propogation-visualization.dir/mainwindow.cpp.o" \
-"CMakeFiles/wave-propogation-visualization.dir/gridwidget.cpp.o"
+"CMakeFiles/wave-propogation-visualization.dir/gridwidget.cpp.o" \
+"CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o" \
+"CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o"
 
 # External object files for target wave-propogation-visualization
 wave__propogation__visualization_EXTERNAL_OBJECTS =
@@ -146,12 +176,14 @@ wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization
 wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: CMakeFiles/wave-propogation-visualization.dir/main.cpp.o
 wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: CMakeFiles/wave-propogation-visualization.dir/mainwindow.cpp.o
 wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: CMakeFiles/wave-propogation-visualization.dir/gridwidget.cpp.o
+wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o
+wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o
 wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: CMakeFiles/wave-propogation-visualization.dir/build.make
 wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: /Users/aidanwilde/Qt/6.9.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets
 wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: /Users/aidanwilde/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/QtGui
 wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: /Users/aidanwilde/Qt/6.9.0/macos/lib/QtCore.framework/Versions/A/QtCore
 wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization: CMakeFiles/wave-propogation-visualization.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/Qt_6_9_0_for_macOS-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable wave-propogation-visualization.app/Contents/MacOS/wave-propogation-visualization"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wave-propogation-visualization.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -200,6 +200,54 @@ wave-propogation-visualization_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wave-propogation-visualization_autogen.dir/build.make CMakeFiles/wave-propogation-visualization_autogen.dir/build
 .PHONY : wave-propogation-visualization_autogen/fast
 
+fieldpatternunit.o: fieldpatternunit.cpp.o
+.PHONY : fieldpatternunit.o
+
+# target to build an object file
+fieldpatternunit.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wave-propogation-visualization.dir/build.make CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.o
+.PHONY : fieldpatternunit.cpp.o
+
+fieldpatternunit.i: fieldpatternunit.cpp.i
+.PHONY : fieldpatternunit.i
+
+# target to preprocess a source file
+fieldpatternunit.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wave-propogation-visualization.dir/build.make CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.i
+.PHONY : fieldpatternunit.cpp.i
+
+fieldpatternunit.s: fieldpatternunit.cpp.s
+.PHONY : fieldpatternunit.s
+
+# target to generate assembly for a file
+fieldpatternunit.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wave-propogation-visualization.dir/build.make CMakeFiles/wave-propogation-visualization.dir/fieldpatternunit.cpp.s
+.PHONY : fieldpatternunit.cpp.s
+
+fieldpatternwidget.o: fieldpatternwidget.cpp.o
+.PHONY : fieldpatternwidget.o
+
+# target to build an object file
+fieldpatternwidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wave-propogation-visualization.dir/build.make CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.o
+.PHONY : fieldpatternwidget.cpp.o
+
+fieldpatternwidget.i: fieldpatternwidget.cpp.i
+.PHONY : fieldpatternwidget.i
+
+# target to preprocess a source file
+fieldpatternwidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wave-propogation-visualization.dir/build.make CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.i
+.PHONY : fieldpatternwidget.cpp.i
+
+fieldpatternwidget.s: fieldpatternwidget.cpp.s
+.PHONY : fieldpatternwidget.s
+
+# target to generate assembly for a file
+fieldpatternwidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wave-propogation-visualization.dir/build.make CMakeFiles/wave-propogation-visualization.dir/fieldpatternwidget.cpp.s
+.PHONY : fieldpatternwidget.cpp.s
+
 gridwidget.o: gridwidget.cpp.o
 .PHONY : gridwidget.o
 
@@ -311,6 +359,12 @@ help:
 	@echo "... wave-propogation-visualization_autogen"
 	@echo "... wave-propogation-visualization_autogen_timestamp_deps"
 	@echo "... wave-propogation-visualization"
+	@echo "... fieldpatternunit.o"
+	@echo "... fieldpatternunit.i"
+	@echo "... fieldpatternunit.s"
+	@echo "... fieldpatternwidget.o"
+	@echo "... fieldpatternwidget.i"
+	@echo "... fieldpatternwidget.s"
 	@echo "... gridwidget.o"
 	@echo "... gridwidget.i"
 	@echo "... gridwidget.s"
