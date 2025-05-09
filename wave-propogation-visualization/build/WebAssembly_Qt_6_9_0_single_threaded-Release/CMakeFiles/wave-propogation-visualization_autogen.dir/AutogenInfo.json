@@ -8,22 +8,11 @@
 	[
 		"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/CMakeLists.txt",
 		"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Release/.qtc/package-manager/auto-setup.cmake",
-		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake",
-		"/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/lib/cmake/Qt6/qt.toolchain.cmake",
-		"/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/lib/cmake/Qt6/QtPublicWasmToolchainHelpers.cmake",
-		"/Users/aidanwilde/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
-		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeSystem.cmake.in",
 		"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Release/CMakeFiles/3.30.5/CMakeSystem.cmake",
 		"/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/lib/cmake/Qt6/qt.toolchain.cmake",
 		"/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/lib/cmake/Qt6/QtPublicWasmToolchainHelpers.cmake",
 		"/Users/aidanwilde/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
-		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeNinjaFindMake.cmake",
 		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake",
-		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake",
-		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineCompiler.cmake",
-		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindBinUtils.cmake",
-		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Clang-FindBinUtils.cmake",
-		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in",
 		"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Release/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake",
 		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake",
 		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeGenericSystem.cmake",
@@ -38,7 +27,6 @@
 		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
 		"/Users/aidanwilde/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
 		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake",
-		"/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake",
 		"/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/lib/cmake/Qt6/Qt6Config.cmake",
@@ -456,6 +444,18 @@
 	"HEADERS" : 
 	[
 		[
+			"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.h",
+			"MU",
+			"EWIEGA46WW/moc_fieldpatternunit.cpp",
+			null
+		],
+		[
+			"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_fieldpatternwidget.cpp",
+			null
+		],
+		[
 			"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/gridwidget.h",
 			"MU",
 			"EWIEGA46WW/moc_gridwidget.cpp",
@@ -522,6 +522,16 @@
 	"SETTINGS_FILE" : "/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Release/CMakeFiles/wave-propogation-visualization_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.cpp",
+			"MU",
+			null
+		],
 		[
 			"/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/gridwidget.cpp",
 			"MU",

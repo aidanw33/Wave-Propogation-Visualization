@@ -140,7 +140,8 @@ void GridWidget::calculatePositiveRays(double start_point_x, double start_point_
         auto [iterator, inserted] = rays.insert(ray);
         if (!inserted) {
             return;
-        }    }
+        }
+    }
 
     //add a line recursively
     if (wall_distance < ceiling_distance) {

@@ -23,6 +23,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->angle1_setter, QOverload<double>::of(&QDoubleSpinBox::valueChanged), ui->graph, &GridWidget::setAngle1);
     connect(ui->angle2_setter, QOverload<double>::of(&QDoubleSpinBox::valueChanged), ui->graph, &GridWidget::setAngle2);
 
+    connect(ui->angle1_setter, QOverload<double>::of(&QDoubleSpinBox::valueChanged), ui->fieldpatterngraph, &FieldPatternWidget::setAngle1);
+    connect(ui->angle2_setter, QOverload<double>::of(&QDoubleSpinBox::valueChanged), ui->fieldpatterngraph, &FieldPatternWidget::setAngle2);
+
     // Initialize grid with current spin box values
     ui->graph->setAngle1(ui->angle1_setter->value());
     ui->graph->setAngle2(ui->angle2_setter->value());
@@ -35,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Connect the start point
     connect(ui->startPoint_setter, QOverload<double>::of(&QDoubleSpinBox::valueChanged), ui->graph, &GridWidget::setStart);
+    connect(ui->startPoint_setter, QOverload<double>::of(&QDoubleSpinBox::valueChanged), ui->fieldpatterngraph, &FieldPatternWidget::setStart);
 
 }
 

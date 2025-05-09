@@ -149,6 +149,7 @@ wave-propogation-visualization_autogen/timestamp: \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtCore/qversiontagging.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtCore/qxptype_traits.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtCore/qyieldcpu.h \
+	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/QPainter \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qaction.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qbitmap.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qbrush.h \
@@ -162,13 +163,16 @@ wave-propogation-visualization_autogen/timestamp: \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qimage.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qkeysequence.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qpaintdevice.h \
+	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qpainter.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qpalette.h \
+	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qpen.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qpixelformat.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qpixmap.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qpolygon.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qregion.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qrgb.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qrgba64.h \
+	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qtextoption.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qtgui-config.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qtguiexports.h \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/include/QtGui/qtguiglobal.h \
@@ -433,29 +437,20 @@ wave-propogation-visualization_autogen/timestamp: \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/plugins/platforms/qtloader.js \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/plugins/platforms/qtlogo.svg \
 	/Users/aidanwilde/Qt/6.9.0/wasm_singlethread/plugins/platforms/wasm_shell.html \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineCompiler.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindBinUtils.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeGenericSystem.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeNinjaFindMake.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakePushCheckState.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeSystem.cmake.in \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Clang-CXX.cmake \
-	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Clang-FindBinUtils.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/Clang.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/Compiler/GNU.cmake \
 	/Users/aidanwilde/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/FeatureSummary.cmake \
@@ -488,6 +483,10 @@ wave-propogation-visualization_autogen/timestamp: \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Release/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Release/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/build/WebAssembly_Qt_6_9_0_single_threaded-Release/wave-propogation-visualization_autogen/moc_predefs.h \
+	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.cpp \
+	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternunit.h \
+	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.cpp \
+	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/fieldpatternwidget.h \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/gridwidget.cpp \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/gridwidget.h \
 	/Users/aidanwilde/repos/spacetime/wave-propogation-visualization/main.cpp \
